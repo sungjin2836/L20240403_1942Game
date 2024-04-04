@@ -11,10 +11,13 @@ public class Player : MonoBehaviour
 
     Animator ani; // 애니메이터를 가져올 변수
 
+    //리스트로 변경 후 사용하지 않음
     public GameObject bullet;
     public GameObject bullet2;
     public GameObject bullet3;
     public GameObject bullet4;
+
+    public List<GameObject> bullets = new List<GameObject>();
 
     public Transform pos = null;
     void Start()
@@ -63,22 +66,18 @@ public class Player : MonoBehaviour
             switch (weaponLv)
             {
                 case 1:
-                    Instantiate(bullet, pos.position, Quaternion.identity);
+                    Instantiate(bullets[0], pos.position, Quaternion.identity);
                     break;
                 case 2:
-                    Instantiate(bullet2, pos.position, Quaternion.identity);
+                    Instantiate(bullets[1], pos.position, Quaternion.identity);
                     break;
                 case 3:
-                    Instantiate(bullet3, pos.position, Quaternion.identity);
+                    Instantiate(bullets[2], pos.position, Quaternion.identity);
                     break;
                 case 4:
-                    Instantiate(bullet4, pos.position, Quaternion.identity);
+                    Instantiate(bullets[3], pos.position, Quaternion.identity);
                     break;
-
             }
-            
-            
-            
         }
 
         transform.Translate(moveX ,moveY, 0);

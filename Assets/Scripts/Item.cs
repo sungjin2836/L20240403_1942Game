@@ -7,9 +7,16 @@ public class Item : MonoBehaviour
     public float Speed = 2;
     private float xView = 1;
     private float yView = 1;
+
+    public float ItemVelocity = 20f;
+    Rigidbody2D rig = null;
+
     void Start()
     {
-        
+        //rig = GetComponent<Rigidbody2D>();
+        //rig.AddForce(new Vector3(ItemVelocity, ItemVelocity, 0));
+        //Physics Material 2D를 벽에 넣어 벽에 닿으면 튕기게 설정 가능
+
     }
 
     // Update is called once per frame

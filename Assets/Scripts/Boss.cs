@@ -55,7 +55,9 @@ public class Boss : MonoBehaviour
 
             if (bossHP < 0)
             {
+                effect = Instantiate(effect, transform.position, Quaternion.identity);
                 Instantiate(item, transform.position, Quaternion.identity);
+                Destroy(effect, 0.5f);
                 Destroy(gameObject);
             }
         }

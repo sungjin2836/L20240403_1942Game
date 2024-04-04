@@ -22,4 +22,20 @@ public class PBullet : MonoBehaviour
     {
       Destroy(gameObject);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Monster"))
+        {
+            //몬스터 삭제
+            Destroy(collision.gameObject);
+            //데미지 주기
+
+            //이펙트 생성
+
+            //미사일 삭제
+            Destroy(gameObject);
+        }
+    }
 }
